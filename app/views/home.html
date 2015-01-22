@@ -1,0 +1,43 @@
+<!-- <body> -->
+  <div>
+    <label>Hello? Is anybody there?</label>
+    <input type="text" ng-model="hello" placeholder="Maybe a traditional greeting?">
+    <hr>
+    <h1>{{hello}}</h1>
+  </div>
+
+  <div ng-controller="homeController">
+
+    <span ng-repeat="tag in tags">
+      <input type="checkbox" value="tag.id" ng-click="addTag(tag.id)">{{tag.name}}</input>
+    </span>
+
+    <div class="form">
+      Title: <input type="text" ng-model="newPost.title"/>
+      Content: <input type="text" ng-model="newPost.content"/>
+      Tags:
+      <span ng-repeat="tag in tags">
+        <input type="checkbox" value="tag.id" ng-click="toggleId(tag.id)">{{tag.name}}</input>
+      </span>
+      {{newPost}}
+    </div>
+
+    <div ng-click="submitNewPost()">submit</div>
+
+    <!-- <div ng-repeat="post in posts"> -->
+    <div ng-repeat="post in posts | filter:search:strict | selectedTags:tagArray:true">
+    <!-- <div ng-repeat="post in posts | filter:search:strict"> -->
+    <a ui-sref="show({id: post.id})">
+      <h2>{{post.title}}</h2>
+    </a>
+      <small ng-repeat="tag_id in post.tag_ids">{{getTagName(tag_id)}}</small>
+      <small>{{post.date | date:'EEEE'}}</small>
+      <p>{{post.content}}</p>
+      <hr>
+    </div>
+
+    broad search: <input type="text" ng-model="search">
+    title search: <input type="text" ng-model="search.title">
+
+  </div>
+<!-- </body> -->

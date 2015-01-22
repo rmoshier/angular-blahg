@@ -1,0 +1,13 @@
+{
+  "name": "Blahg",
+  "version": "0.0.0",
+  "authors": [
+    "www.github.com/rmoshier"
+  ],
+  "description": "a super cool angular app",
+  "main": "layout.html",
+  "dependencies": {
+    "angular": "1.3.8",
+    "angular-ui-router": "latest"
+  }
+}
