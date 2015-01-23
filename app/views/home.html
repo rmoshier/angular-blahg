@@ -7,6 +7,14 @@
     </div>
   </div> -->
 
+  <!-- <div class="flex-video">
+    <iframe width="300" height="200" src="//www.youtube.com/embed/aiBt44rrslw" frameborder="0"></iframe>
+  </div> -->
+
+  <div class="flex-video">
+    <iframe src="//player.vimeo.com/video/92877141" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+
   <div class="row">
     <div class="medium-10 medium-centered columns">
       <div ng-controller="homeController">
@@ -30,9 +38,10 @@
         <!-- <div ng-repeat="post in posts"> -->
         <div ng-repeat="post in posts | filter:search:strict | selectedTags:tagArray:true">
         <!-- <div ng-repeat="post in posts | filter:search:strict"> -->
-        <a ui-sref="show({id: post.id})">
-          <h2>{{post.title}}</h2>
-        </a>
+          <a ui-sref="show({id: post.id})">
+            <h2>{{post.title}}</h2>
+          </a>
+          <span ng-if="post.tag_ids.length > 0">TAGS: </span>
           <small ng-repeat="tag_id in post.tag_ids">{{getTagName(tag_id)}}</small>
           <small>{{post.date | date:'EEEE'}}</small>
           <p>{{post.content}}</p>
