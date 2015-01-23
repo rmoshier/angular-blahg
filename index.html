@@ -1,6 +1,7 @@
 <!doctype html>
 <html ng-app="blahgApp">
 <head>
+  <link rel="stylesheet" href="app/stylesheets/app.css">
   <link rel="stylesheet" href="app/stylesheets/foundation.css">
   <script src="../bower_components/angular/angular.min.js"></script>
   <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -11,9 +12,22 @@
 </head>
 
 <body>
-  <div class="header">
-    <a ui-sref=".home">Home</a>
-    <a ui-sref=".posts">Posts</a>
+  <div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+      <!-- <div class="header"> -->
+        <ul class="title-area">
+          <li class="name">
+            <h1><li>Blahg</h1></li>
+            <!-- <h1><a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" ui-sref=".home">Blahg</a></h1> -->
+            <!-- <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1"> -->
+              <!-- <li><a ui-sref=".home">Blahg</a></li> -->
+              <!-- <li><a href="/">Blahg</a></li> -->
+              <!-- <li><a ui-sref=".posts">Posts</a></li> -->
+            <!-- </ul> -->
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
 
   <div ui-view>
